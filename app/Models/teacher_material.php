@@ -9,6 +9,6 @@ class teacher_material extends Model
     protected $fillable=['teacher_id','material_id'];
 
     public function student(){
-        return $this->belongsToMany(student::class,'teacher_material_booking');
+        return $this->belongsToMany(student::class,'teacher_material_booking','teacher_materials_id','student_id');
     }
 }

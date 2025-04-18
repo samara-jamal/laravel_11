@@ -12,7 +12,7 @@ class student extends Model
         return $this->belongsTo(User::class,'user_id');
     }
 
-    public function teacher_material(){
-        return $this->belongsToMany(teacher_material::class,'_teacher_material_stusent_booking');
+    public function teacherMaterial(){
+        return $this->belongsToMany(teacher_material::class,'teacher_material_booking','teacher_materials_id','student_id');
     }
 }

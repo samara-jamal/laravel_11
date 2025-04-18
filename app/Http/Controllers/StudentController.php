@@ -35,10 +35,10 @@ class StudentController extends Controller
       ],200);
    }
 
-   public function Booking(teacher_material $teacher_material, Request $reuest){
+   public function Booking(teacher_material $teacher_material){
       $user = Auth::user();
       $std = $user->student;
-   
+      $std->teacherMaterial()->attach($teacher_material->id);
       return response()->json([
          "message" => "added"
       ]);
